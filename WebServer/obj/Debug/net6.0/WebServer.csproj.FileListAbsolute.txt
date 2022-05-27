@@ -1,0 +1,15 @@
+C:\Users\Enqui\Code\WebServer\WebServer\bin\Debug\net6.0\WebServer.exe
+C:\Users\Enqui\Code\WebServer\WebServer\bin\Debug\net6.0\WebServer.deps.json
+C:\Users\Enqui\Code\WebServer\WebServer\bin\Debug\net6.0\WebServer.runtimeconfig.json
+C:\Users\Enqui\Code\WebServer\WebServer\bin\Debug\net6.0\WebServer.dll
+C:\Users\Enqui\Code\WebServer\WebServer\bin\Debug\net6.0\WebServer.pdb
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\WebServer.csproj.AssemblyReference.cache
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\WebServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\WebServer.AssemblyInfoInputs.cache
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\WebServer.AssemblyInfo.cs
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\WebServer.csproj.CoreCompileInputs.cache
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\WebServer.dll
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\refint\WebServer.dll
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\WebServer.pdb
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\WebServer.genruntimeconfig.cache
+C:\Users\Enqui\Code\WebServer\WebServer\obj\Debug\net6.0\ref\WebServer.dll
