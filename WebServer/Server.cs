@@ -15,8 +15,10 @@ namespace WebServer
         // A semaphore that waits for a specified number of simul-allowed connections.
         private static Semaphore _semaphore = new Semaphore(maxSimultaneousConnections, maxSimultaneousConnections);
 
-        // Return list of IP addresses assigned to localhost network devices, 
-        // including hardwired ethernet, wireless etc.
+        /// <summary>
+        /// Return list of IP addresses assigned to localhost network devices, 
+        /// including hardwired ethernet, wireless etc.
+        /// </summary>
         private static List<IPAddress> GetLocalHostIPs()
         {
             IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
@@ -29,7 +31,9 @@ namespace WebServer
             return res;
         }
 
-        // Instantiate HttpListener and add the localhost prefixes (subnet masks).
+        /// <summary>
+        /// Instantiate HttpListener and add the localhost prefixes (subnet masks).
+        /// </summary>
         private static HttpListener InitializeListener(List<IPAddress> localhostIPs)
         {
             HttpListener listener = new HttpListener();
@@ -45,7 +49,10 @@ namespace WebServer
             return listener;
         }
 
-        // Get localhost's IPv4 addresses
+        /// <summary>
+        /// Get localhost's IPv4 addresses
+        /// </summary>
+        /// <returns> List of IPv4 addresses </returns>
         private static IEnumerable<string> GetIp4Address()
         {
             List<string> res = new List<string>();
@@ -60,15 +67,20 @@ namespace WebServer
             return res;
         }
 
-        // Begin listening to connections on a seperate worker thread.
+        /// <summary>
+        /// Begin listening to connections on a seperate worker thread.
+        /// </summary>
+        /// <param name="listener"> HttpListner for server start-up </param>
         private static void Start(HttpListener listener)
         {
             listener.Start();
             Task.Run(() => RunServer(listener)); // invoke a worker thread
         }
 
-        // Start awaiting for connections, up to the "maxSimultaneousConnections" value.
-        // Running in a seperate thread.
+        /// <summary>
+        /// Start awaiting for connections, up to the "maxSimultaneousConnections" value.
+        /// Running in a seperate thread.
+        /// </summary>
         private static void RunServer(HttpListener listener)
         {
             while (true)
@@ -79,7 +91,9 @@ namespace WebServer
             }
         }
 
-        // Connection listener as an awaitable asynchronous process.
+        /// <summary>
+        /// Connection listener as an awaitable asynchronous process.
+        /// </summary>
         private static async void StartConnectionListener(HttpListener listener)
         {
             // wait for a connection. Return to caller while we wait.
@@ -87,6 +101,7 @@ namespace WebServer
 
             // release the semaphore for another listener. _semaphore +1
             _semaphore.Release();
+            Log(context.Request);
 
             // connection built now, processing
             string response = "Connected!";
@@ -96,7 +111,18 @@ namespace WebServer
             context.Response.OutputStream.Close();
         }
 
-        // Starts the web server.
+        /// <summary>
+        /// Log requests.
+        /// </summary>
+        private static void Log(HttpListenerRequest request)
+        {
+            Console.WriteLine(request.RemoteEndPoint + " " + request.HttpMethod + " /" +
+                request.Url.AbsoluteUri.RightOf('/', 3));
+        }
+
+        /// <summary>
+        /// Starts the web server.
+        /// </summary>
         public static void Start()
         {
             List<IPAddress> localHostIPs = GetLocalHostIPs();
@@ -104,5 +130,4 @@ namespace WebServer
             Start(listener);
         }
     }
-
 }
