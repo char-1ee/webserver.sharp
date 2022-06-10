@@ -6,6 +6,12 @@ A basic web server implemented in C#. The web server runs as a console applicati
 - Hands-on practices with C# programming (multithreading, networking etc.)
 - Design and contruction of web server
 - Build a web server with basic functions from scratch
+
+## Support
+- Routing
+- Session Manager
+- Authorization
+- Expired Sessions
  
 ## Built With
 
