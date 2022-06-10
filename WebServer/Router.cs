@@ -14,6 +14,11 @@ namespace WebServer
     {
         public string WebsitePath { get; set; }
 
+        public const string POST = "post";
+        public const string GET = "get";
+        public const string PUT = "put";
+        public const string DELETE = "delete";
+
         private Dictionary<string, ExtensionInfo> extFolderMap;
 
         public Router()
@@ -103,6 +108,10 @@ namespace WebServer
                 // '/' => '\' for windows
                 string fullPath = Path.Combine(WebsitePath, path);
                 res = extInfo.Loader(fullPath, ext, extInfo);
+            } 
+            else
+            {
+                res = new ResponsePacket() { Error = Server.ServerError.UnknownType };
             }
 
             return res;
@@ -120,10 +129,11 @@ namespace WebServer
         public string ContentType { get; set; }
         public Encoding Encoding { get; set; }
         public HttpStatusCode StatusCode { get; set; }
+        public Server.ServerError Error { get; set; }
 
         public ResponsePacket()
         {
-            //Error = Server.ServerError.OK;
+            Error = Server.ServerError.OK;
             StatusCode = HttpStatusCode.OK;
         }
     }

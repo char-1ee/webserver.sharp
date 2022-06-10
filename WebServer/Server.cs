@@ -10,6 +10,17 @@ namespace WebServer
 {
     public static class Server
     {
+        public enum ServerError
+        {
+            OK,
+            ExpiredSession,
+            NotAuthorized,
+            FileNotFound,
+            PageNotFound,
+            ServerError,
+            UnknownType,
+        }
+
         private static HttpListener _listener;
         private static int maxSimulaneousConnections = 20;
         private static Semaphore _semaphore = new Semaphore(maxSimulaneousConnections, maxSimulaneousConnections);
