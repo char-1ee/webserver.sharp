@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WrQXzTSHBknaCnJQAL/BrM9yft9wdkuetyjQJ42h6GQ1fLF+Fg96Vfc5/eZWPwHbkg/eVOA5b3cFK8j5AKt3CA==",
+  "dgSpecHash": "V+IdsDzOCvMicQjhhvHWtvW8bqYgoORxWNUIy544zw2b7paVlR/efAYwjGDTQNywT3gYVoN3l8D+Y5Qg6xBB1A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Enqui\\Code\\WebServer\\WebServer\\WebServer.csproj",
+  "projectFilePath": "D:\\Code\\webserver.sharp\\WebServer\\WebServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

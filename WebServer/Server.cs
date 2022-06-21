@@ -19,6 +19,8 @@ namespace WebServer
             PageNotFound,
             ServerError,
             UnknownType,
+            ValidationError,
+            AjaxError,
         }
 
         private static HttpListener _listener;
