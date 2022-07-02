@@ -19,6 +19,6 @@ A basic web server implemented in C#. The web server runs as a console applicati
 * [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) - The web framework used 
 * [Visuale Studio Community 2019 16.11.5](https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/) - IDE
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+## TODO
+- Fix expired session
+- Add authorization
